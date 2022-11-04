@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  - var results = [{Pigment : "Gold", Power: 24, Location: "Europe"},{Pigment : "Black", Power: 21, Location : "Zimbabwe"},{Pigment : "Striped", Power:31, Location : "Africa"}]
+  div(class = "container-fluid")
+   div(class = "row")
+    each item,index in results
+     div.col-sm-2(onclick=`buy(${index})`) Pigment: #{item["Pigment"]}<br> Power: #{item["Power"]}<br> Location: #{item["Location"]}
+
+
+  script.
+    function buy(index) {
+        alert("You purchased item " + index)
+    }
