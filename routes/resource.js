@@ -10,21 +10,21 @@ var jackal_controller = require('../controllers/jackal');
 // GET resources base. 
 router.get('/', api_controller.api); 
  
-/// COSTUME ROUTES /// 
+/// JACKAL ROUTES /// 
  
-// POST request for creating a Costume.  
+// POST request for creating a Jackal.  
 router.post('/jackals', jackal_controller.jackal_create_post); 
  
-// DELETE request to delete Costume. 
+// DELETE request to delete Jackal. 
 router.delete('/jackals/:id', jackal_controller.jackal_delete); 
  
-// PUT request to update Costume. 
+// PUT request to update Jackal. 
 router.put('/jackals/:id', jackal_controller.jackal_update_put); 
  
-// GET request for one Costume. 
+// GET request for one Jackal. 
 router.get('/jackals/:id', jackal_controller.jackal_detail); 
  
-// GET request for list of all Costume items. 
+// GET request for list of all Jackal items. 
 router.get('/jackals', jackal_controller.jackal_list); 
  
 module.exports = router; 

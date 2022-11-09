@@ -1,8 +1,15 @@
 var Jackal = require('../models/jackal'); 
  
 // List of all Jackals 
-exports.jackal_list = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Jackal list'); 
+exports.jackal_list = async function(req, res) { 
+    try{ 
+        theJackals = await Jackal.find(); 
+        res.send(theJackals); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
 }; 
  
 // for a specific Jackal. 
