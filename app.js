@@ -3,12 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var Jackal = require("./models/jackal"); 
 
 require('dotenv').config(); 
 const connectionString =  process.env.MONGO_CON 
 mongoose = require('mongoose'); 
 mongoose.connect(connectionString,  {useNewUrlParser: true, useUnifiedTopology: true});
-
+ 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var jackalRouter = require('./routes/jackal');
@@ -47,5 +48,32 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+// We can seed the collection if needed on server start 
+async function recreateDB(){ 
+  // Delete everything 
+  await Costume.deleteMany(); 
+ 
+  let instance1 = new Jackal({Pigment:"Gold",  Power:24, Location:"Europe"}); 
+  instance1.save( function(err,doc) { 
+      if(err) return console.error(err); 
+      console.log("First object saved") 
+  }); 
+  let instance2 = new Jackal({Pigment:"Black",  Power:21, Location:"Zimbabwe"}); 
+    instance2.save( function(err,doc) { 
+        if(err) return console.error(err); 
+        console.log("Second object saved") 
+    });  
+    let instance3 = new Jackal({Pigment:"Striped",  Power:31, Location:"Africa"}); 
+      instance3.save( function(err,doc) { 
+          if(err) return console.error(err); 
+          console.log("Third object saved") 
+      });   
+} 
+
+ 
+let reseed = true; 
+if (reseed) { recreateDB();}
 
 module.exports = app;
+
+ 
