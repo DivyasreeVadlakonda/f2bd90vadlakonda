@@ -51,7 +51,7 @@ app.use(function(err, req, res, next) {
 // We can seed the collection if needed on server start 
 async function recreateDB(){ 
   // Delete everything 
-  await Costume.deleteMany(); 
+  await Jackal.deleteMany(); 
  
   let instance1 = new Jackal({Pigment:"Gold",  Power:24, Location:"Europe"}); 
   instance1.save( function(err,doc) { 
