@@ -1,5 +1,5 @@
 const mongoose = require("mongoose") 
-const costumeSchema = mongoose.Schema({ 
+const jackalSchema = mongoose.Schema({ 
  Pigment: String, 
  Power: Number, 
  Location: String 
