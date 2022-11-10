@@ -5,7 +5,7 @@ block content
   - let jackals = results
   div(class = "container-fluid")
    div(class = "row")
-    each item,index in results
+    each item,index in jackals
      div.col-sm-2(onclick=`buy(${index})`) Pigment: #{item["Pigment"]}<br> Power: #{item["Power"]}<br> Location: #{item["Location"]}
 
 
