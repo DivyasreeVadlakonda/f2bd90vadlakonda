@@ -17,7 +17,7 @@ exports.jackal_list = async function(req, res) {
 exports.jackal_view_all_Page = async function(req, res) { 
     try{ 
         theJackals = await Jackal.find(); 
-        res.render('jackals', { title: 'Jackal Search Results', results: theJackals }); 
+        res.render('jackal', { title: 'Jackal Search Results', results: theJackals }); 
     } 
     catch(err){ 
         res.status(500); 
