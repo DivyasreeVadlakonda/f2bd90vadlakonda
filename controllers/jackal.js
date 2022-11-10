@@ -31,8 +31,20 @@ exports.jackal_detail = function(req, res) {
 }; 
  
 // Handle Jackal create on POST. 
-exports.jackal_create_post = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Jackal create POST'); 
+exports.jackal_create_post = async function(req, res) { 
+    console.log(req.body) 
+    let document = new Jackal(); 
+    document.Pigment = req.body.Pigment; 
+    document.Power = req.body.Power; 
+    document.Location = req.body.Location; 
+    try{ 
+        let result = await document.save(); 
+        res.send(result); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
 }; 
  
 // Handle Jackal delete form on DELETE. 
