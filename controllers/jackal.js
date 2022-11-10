@@ -12,6 +12,19 @@ exports.jackal_list = async function(req, res) {
     }   
 }; 
  
+// VIEWS 
+// Handle a show all view 
+exports.jackal_view_all_Page = async function(req, res) { 
+    try{ 
+        theJackals = await Costume.find(); 
+        res.render('jackals', { title: 'Jackal Search Results', results: theJackals }); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+}; 
+
 // for a specific Jackal. 
 exports.jackal_detail = function(req, res) { 
     res.send('NOT IMPLEMENTED: Jackal detail: ' + req.params.id); 
