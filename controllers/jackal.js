@@ -16,7 +16,7 @@ exports.jackal_list = async function(req, res) {
 // Handle a show all view 
 exports.jackal_view_all_Page = async function(req, res) { 
     try{ 
-        theJackals = await Costume.find(); 
+        theJackals = await Jackal.find(); 
         res.render('jackals', { title: 'Jackal Search Results', results: theJackals }); 
     } 
     catch(err){ 
