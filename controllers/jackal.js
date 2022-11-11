@@ -10,7 +10,7 @@ exports.jackal_list = async function(req, res) {
         res.status(500); 
         res.send(`{"error": ${err}}`); 
     }   
-}; 
+};  
  
 // VIEWS 
 // Handle a show all view 
@@ -26,9 +26,17 @@ exports.jackal_view_all_Page = async function(req, res) {
 }; 
 
 // for a specific Jackal. 
-exports.jackal_detail = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Jackal detail: ' + req.params.id); 
-}; 
+exports.jackal_detail = async function(req, res) { 
+        console.log("detail"  + req.params.id) 
+        try { 
+            result = await Jackal.findById( req.params.id) 
+            res.send(result) 
+        } catch (error) { 
+            res.status(500) 
+            res.send(`{"error": document for id ${req.params.id} not found`); 
+        } 
+    }; 
+    
  
 // Handle Jackal create on POST. 
 exports.jackal_create_post = async function(req, res) { 
