@@ -61,6 +61,23 @@ exports.jackal_delete = function(req, res) {
 }; 
  
 // Handle Jackal update form on PUT. 
-exports.jackal_update_put = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Jackal update PUT' + req.params.id); 
+exports.jackal_update_put = async function(req, res) { 
+    console.log(`update on id ${req.params.id} with body 
+${JSON.stringify(req.body)}`) 
+    try { 
+        let toUpdate = await Jackal.findById( req.params.id) 
+        // Do updates of properties 
+        if(req.body.Pigment)  
+               toUpdate.Pigment = req.body.Pigment; 
+        if(req.body.Power) toUpdate.Power = req.body.Power; 
+        if(req.body.Location) toUpdate.Location = req.body.Location; 
+        let result = await toUpdate.save(); 
+        console.log("Sucess " + result) 
+        res.send(result) 
+    } catch (err) { 
+        res.status(500) 
+        res.send(`{"error": ${err}: Update for id ${req.params.id} 
+failed`); 
+    } 
 }; 
+   
