@@ -67,8 +67,7 @@ ${JSON.stringify(req.body)}`)
     try { 
         let toUpdate = await Jackal.findById( req.params.id) 
         // Do updates of properties 
-        if(req.body.Pigment)  
-               toUpdate.Pigment = req.body.Pigment; 
+        if(req.body.Pigment) toUpdate.Pigment = req.body.Pigment; 
         if(req.body.Power) toUpdate.Power = req.body.Power; 
         if(req.body.Location) toUpdate.Location = req.body.Location; 
         let result = await toUpdate.save(); 
