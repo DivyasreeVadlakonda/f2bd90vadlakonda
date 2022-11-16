@@ -35,5 +35,9 @@ router.get('/create', jackal_controller.jackal_create_Page);
 
 /* GET create update page */ 
 router.get('/update', jackal_controller.jackal_update_Page); 
+
+/* GET delete costume page */ 
+router.get('/delete', jackal_controller.jackal_delete_Page); 
+ 
  
 module.exports = router; 
