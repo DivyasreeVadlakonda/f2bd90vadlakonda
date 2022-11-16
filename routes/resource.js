@@ -28,6 +28,6 @@ router.get('/jackals/:id', jackal_controller.jackal_detail);
 router.get('/jackals', jackal_controller.jackal_list); 
 
 /* GET detail jackal page */ 
-router.get('/detail', jackal_controlers.jackal_view_one_Page); 
+router.get('/detail', jackal_controller.jackal_view_one_Page); 
  
 module.exports = router; 
