@@ -26,5 +26,8 @@ router.get('/jackals/:id', jackal_controller.jackal_detail);
  
 // GET request for list of all Jackal items. 
 router.get('/jackals', jackal_controller.jackal_list); 
+
+/* GET detail jackal page */ 
+router.get('/detail', jackal_controlers.jackal_view_one_Page); 
  
 module.exports = router; 
