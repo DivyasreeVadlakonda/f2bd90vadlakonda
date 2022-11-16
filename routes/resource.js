@@ -29,5 +29,8 @@ router.get('/jackals', jackal_controller.jackal_list);
 
 /* GET detail jackal page */ 
 router.get('/detail', jackal_controller.jackal_view_one_Page); 
+
+/* GET create jackal page */ 
+router.get('/create', jackal_controller.jackal_create_Page); 
  
 module.exports = router; 
