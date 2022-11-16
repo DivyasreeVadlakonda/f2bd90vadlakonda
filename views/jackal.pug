@@ -2,10 +2,10 @@ extends layout
 
 block content
   h1= title
-  - let jackal = results
+  - let jackals = results
   div(class = "container-fluid")
    div(class = "row")
-    each item,index in jackal
+    each item,index in jackals
      div.col-sm-2(onclick=`buy(${index})`) Pigment: #{item["Pigment"]}<br> Power: #{item["Power"]}<br> Location: #{item["Location"]}
 
 
