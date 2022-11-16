@@ -32,5 +32,8 @@ router.get('/detail', jackal_controller.jackal_view_one_Page);
 
 /* GET create jackal page */ 
 router.get('/create', jackal_controller.jackal_create_Page); 
+
+/* GET create update page */ 
+router.get('/update', jackal_controller.jackal_update_Page); 
  
 module.exports = router; 
