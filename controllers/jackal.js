@@ -92,8 +92,7 @@ exports.jackal_view_one_Page = async function(req, res) {
     console.log("single view for id "  + req.query.id) 
     try{ 
         result = await Jackal.findById( req.query.id) 
-        res.render('jackaldetail',  
-{ title: 'Jackal Detail', toShow: result }); 
+        res.render('jackaldetail', { title: 'Jackal Detail', toShow: result }); 
     } 
     catch(err){ 
         res.status(500) 

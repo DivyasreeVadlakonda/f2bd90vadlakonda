@@ -3,23 +3,23 @@ extends layout
 block content 
   h1= title 
  
-  - let jackalid = toShow._id 
+  - let id = toShow._id 
   - let Pigment = toShow.Pigment 
   - let Power = toShow.Power 
   - let Location = toShow.Location 
   div 
     div.row 
       div(class='jackalAttr mr-3') Jackal ID is: 
-      div #{jackalid} 
+      div #{id} 
     div.row 
       div(class='jackalAttr mr-3') Pigment is: 
       div #{Pigment} 
     div.row 
-      div(class='jackalAttr mr-3') Location is: 
-      div #{Location} 
-    div.row 
       div(class='jackalAttr mr-3') Power is: 
       div #{Power} 
+    div.row 
+      div(class='jackalAttr mr-3') Location is: 
+      div #{Location} 
  
  
  
