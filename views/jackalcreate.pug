@@ -2,24 +2,24 @@ extends layout
  
 block content 
   div(class='container', style='border: 2px solid #6495ED; width: 400px;')
-    h1(style="text-align: center; color: #FFBF00")= title 
+    h1(style="text-align: center; color: #FFBF00; font-family:Courier;")= title 
     br
-    div(class='container' style="text-align: center; width: 400px;")
+    div(class='container' style="text-align: center; font-family:Noto; width: 400px;")
       form(id='jackalForm', action="/resource/jackals", method="POST") 
         div.form-group 
           div(class="form-group row mb-3") 
             label.jackalAttr(for='Pigment') Pigment  
-            div(class='col-4' style='width: 200px;')
+            div(class='col-4' style='width: 200px; font-family:Noto;')
               input#Pigment(class='form-control form-control-sm', type='text', name='Pigment') 
         div.form-group 
           div(class="form-group row mb-3") 
             label.jackalAttr(for='Power') Power  
-            div(class='col-4' style='width: 200px;')
+            div(class='col-4' style='width: 200px; font-family:Noto;')
               input#Power(class='form-control form-control-sm', type='number', name='dishPrice') 
         div.form-group
           div(class="form-group row mb-3")  
             label.jackalAttr(for='Location') Location 
-            div(class='col-4' style='width: 200px;')
+            div(class='col-4' style='width: 200px; font-family:Noto;')
               input#Location(class='form-control form-control-sm', type='text', name='Location') 
         input(class='btn btn-primary' type="submit" style='width: 100px; margin: 5px;') 
 
