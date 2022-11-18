@@ -10,14 +10,26 @@
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
     "express": "~4.16.1",
-    "http-errors": "~1.6.3",
+    "express-session": "^1.17.3",
+    "http-errors": "^2.0.0",
     "mongodb": "^4.11.0",
     "mongoose": "^6.7.1",
     "morgan": "~1.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2",
     "pug": "^3.0.2"
   },
   "main": "app.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "This is the second assignment on node<br>\r Remote render server link https://f2db90vadlakonda.onrender.com<br>\r Class : Jackal<br>\r Attributes : Pigment(String),Power(number),Location(String)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DivyasreeVadlakonda/f2db90vadlakonda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DivyasreeVadlakonda/f2db90vadlakonda/issues"
+  },
+  "homepage": "https://github.com/DivyasreeVadlakonda/f2db90vadlakonda#readme"
 }
