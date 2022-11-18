@@ -3,13 +3,18 @@ extends layout
 block content
   h1= title
   - let jackals = results
-  div(class = "container-fluid")
-   div(class = "row")
-    each item,index in jackals
-     div.col-sm-2(onclick=`buy(${index})`) Pigment: #{item["Pigment"]}<br> Power: #{item["Power"]}<br> Location: #{item["Location"]}
+  div(class="container-fluid") 
+    div(class="row m-1") 
+      each jackal,index in jackals  
+        - let destination = `dispatch(\"/resource/update?id=${jackal._id}\")`
+        div(class="row-sm-2", class="m-1") Jackal #{jackal.Pigment}(#{jackal.Location}) is #{jackal.Power}
+          button.btn( class="btn-primary ml-1", onclick= destination) Update
 
 
   script.
     function buy(index) {
         alert("You purchased item " + index)
     }
+    function dispatch(path){ 
+      window.location.href=path 
+    } 
