@@ -2,19 +2,30 @@ extends layout
 
 block content
   h1= title
-  - let jackals = results
-  div(class="container-fluid") 
-    div(class="row m-1") 
-      each jackal,index in jackals  
-        - let destination = `dispatch(\"/resource/update?id=${jackal._id}\")`
-        div(class="row-sm-2", class="m-1") Jackal #{jackal.Pigment}(#{jackal.Location}) is #{jackal.Power}
-          button.btn( class="btn-primary ml-1", onclick= destination) Update
+  - var jackals =results;
+  - let temp = `dispatch(\"/machijackalsnes/create\")`
+  button.btn( class="btn-primary ml-1", onclick=temp) Create
 
+  div(class="container-fluid")
+    div(class="row m-1")
+      each item in jackals
+        - let value = `dispatch(\"/jackal/update?id=${item._id}\")`
+        - let value1 = `dispatch(\"/jackal/detail?id=${item._id}\")`
+        - let value2 = `dispatch(\"/jackal/delete?id=${item._id}\")`
 
+        div(class="row-sm-2" class="m-1") Pigment:#{item.Pigment}, Power:#{item.Power}, Location:#{item.Location}
+          br
+          button.btn( class="btn-dark ml-1", onclick= value) Update 
+          button.btn( class="btn-success ml-1", onclick= value1) Detail View
+          button.btn( class="btn-secondary ml-1", onclick= value2) Delete
   script.
-    function buy(index) {
-        alert("You purchased item " + index)
+    function dispatch(path){
+      window.location.href=path
     }
-    function dispatch(path){ 
-      window.location.href=path 
-    } 
+
+  br
+  
+  script. 
+    function buy(indexNum) {
+      alert(`You purchased item ${indexNum}`);
+    }
